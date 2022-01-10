@@ -6,7 +6,6 @@ const { checkDuplicatedPhoneNumberOrEmail, checkRoleExist, checkRole2Exist } = r
 const authRoute = (app) => {
 
     const router = require("express").Router()
-    
     router.post("/signup",[checkDuplicatedPhoneNumberOrEmail, checkRoleExist], signup)
     router.post("/register",[checkDuplicatedPhoneNumberOrEmail, checkRole2Exist, verifyToken, isAdmin],signup)
     router.post("/signin", signin)
