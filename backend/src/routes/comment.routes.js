@@ -11,7 +11,6 @@ const { changeComment } = require("../middlewares/product/product.middleware");
 
 const commentRoute = (app) => {
   const router = require("express").Router();
-
   router.get("/comments", [verifyToken], getComments);
   router.get("/comment/:commentId", [verifyToken], getComment);
   router.get("/singleProductComments/:trainingId", [verifyToken], getSingleTrainingComments);
