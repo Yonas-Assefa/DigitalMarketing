@@ -13,11 +13,6 @@ const giveRate = async (req, res) => {
       ratedBy: req.userId,
       product: productId,
     });
-    const user = await UserModel.findOne({ _id: sellerId });
-    if (!user) {
-      res.status(400).send({ message: "user not found" });
-      return;
-    }
     const product = await ProductModel.findOne({ _id: productId });
     if (!product) {
       res.status(400).send({ message: "product not found" });
