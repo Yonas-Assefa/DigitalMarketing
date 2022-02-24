@@ -11,6 +11,19 @@ const commentSchema = mongoose.Schema({
     timestamps: true,
 })
 
+// commentSchema.virtual("fromUser",{
+//     ref:"User",
+//     localField:"commentedBy",
+//     foreignField:"_id",
+//     justOne:false
+// })
+
+// commentSchema.virtual("fromAdminUser",{
+//     ref:"AdminUser",
+//     localField:"commentedBy",
+//     foreignField:"_id",
+//     justOne:false
+// })
 
 const CommentModel = mongoose.model("Comment", commentSchema)
 
