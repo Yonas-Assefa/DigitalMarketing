@@ -16,12 +16,8 @@ const Signup = () => {
   const dispatch = useDispatch();
   const dmfsseCtx = useContext(DmfsseContex);
 
-  //request status
-  //idle | loading | succeeded | failed
-
   const [requestStatus, setRequestStatus] = useState("idle");
 
-  // user information
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -63,7 +59,7 @@ const Signup = () => {
     setRole(e.target.value)
   };
 
-  // handle register
+
   const handleSubmit = async (e) => {
     
 
