@@ -15,6 +15,7 @@ const initialState = {
   updateStatus:"idle",
   changePass:false
 };
+// idle | loading | succeeded | failed
 
 export const addNewUser = createAsyncThunk(
   "signup/addNewUser",
