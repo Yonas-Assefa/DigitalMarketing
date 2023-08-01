@@ -12,7 +12,7 @@ const productRoute = (app) => {
     router.patch("/product/:id",[verifyToken],updateProduct)
     router.delete("/product/:id",[verifyToken, changeProduct],deleteProduct)
 
-    app.use("/api/dmfsse", router)
+    app.use("/api/farmers-market", router);
 }
 
 module.exports = productRoute

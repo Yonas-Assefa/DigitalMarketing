@@ -7,7 +7,7 @@ const paymentRoute = (app) => {
     router.post("/chapapay",[verifyToken], addPayment)
     router.post("/stripPaymentIntent",[verifyToken], addPaymentTwo)
 
-    app.use("/api/dmfsse", router)
+    app.use("/api/farmers-market", router);
 }
 
 module.exports = paymentRoute

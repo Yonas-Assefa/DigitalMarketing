@@ -10,7 +10,7 @@ const trainingRoute = (app) => {
     router.patch("/training/:id",[verifyToken, isAdmin],updateTraining);
     router.delete("/training/:id",[verifyToken, isAdmin],deletTraining)
 
-    app.use("/api/dmfsse", router)
+    app.use("/api/farmers-market", router);
 }
 
 

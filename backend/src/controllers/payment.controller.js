@@ -1,16 +1,14 @@
 const { default: axios } = require("axios");
-
-var Publishable_Key =
-  "pk_test_51MtmwdGQR0aBgND8uXLJHMhxpVlTszUAJdAiYryN60bjlNg82XvqdegicaJaKbZ9RyR9qQzE2VpBdaFkh2idvS2900GRzXKnRN";
-var Secret_Key =
-  "sk_test_51MtmwdGQR0aBgND8h8DWTAghwTO84CDtCGUGbeHEZpoOEqzY02zVDFXVqZpVZIr2WAFJrUdlsXEGQxltEAFCA1fn00n7rHJQUa";
+var Publishable_Key = process.env.PUBLISHABLE_KEY;
+var Secret_Key = process.env.SECRET_KEY;
+const chapaSecretKey = process.env.CHAPA_SECRET_KEY;
 
 const stripe = require("stripe")(Secret_Key);
-const chapaSecretKey = "CHASECK_TEST-inlmytxN7CFBwrf8Zm29DPgzYXnZsmrJ";
+
 
 const addPayment = async (req, res) => {
   try {
-    
+
     const response = await axios.post(
       "https://api.chapa.co/v1/transaction/initialize",
       req.body,
@@ -22,12 +20,12 @@ const addPayment = async (req, res) => {
         },
       }
     );
-    
-    
-      res.status(200).send(response);
-    
 
-    
+
+    res.status(200).send(response);
+
+
+
   } catch (err) {
 
     res.status(500).send({ status: "error" });
@@ -46,7 +44,7 @@ const addPaymentTwo = async (req, res) => {
         enabled: true,
       },
     });
-    res.send({clientSecret: paymentIntent.client_secret});
+    res.send({ clientSecret: paymentIntent.client_secret });
   } catch (err) {
     res.status(500).send({ message: err.message });
     return;

@@ -19,7 +19,7 @@ const commentRoute = (app) => {
   router.patch("/comment/:commentId", [verifyToken, changeComment], updateComment);
   router.delete("/comment/:commentId", [verifyToken, changeComment], deleteComment);
 
-  app.use("/api/dmfsse", router);
+  app.use("/api/farmers-market", router);
 };
 
 module.exports = commentRoute;

@@ -3,8 +3,8 @@ import axios from "axios";
 
 const user = JSON.parse(localStorage.getItem("user"));
 const mainUrl =
-  "https://digital-marketing-for-farmers-and-sse.onrender.com/api/dmfsse";
-const localUrl = "http://localhost:5000/api/dmfsse";
+  "https://digital-marketing-for-farmers-and-sse.onrender.com/api/farmers-market";
+const localUrl = "http://localhost:5000/api/farmer-market";
 
 const initialState = {
   messages: [],

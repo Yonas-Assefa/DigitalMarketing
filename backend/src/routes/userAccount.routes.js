@@ -13,7 +13,7 @@ const userRoute = (app) => {
     router.patch("/user/:id",[verifyToken, ],updateUser)
     router.patch("/forgotpassword/:id",updateUser)
 
-    app.use("/api/dmfsse", router)
+    app.use("/api/farmers-market", router);
 }
 
 module.exports = userRoute

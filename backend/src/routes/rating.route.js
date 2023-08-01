@@ -12,7 +12,7 @@ const ratingRoute = (app) => {
     router.delete("/rate/:id",[verifyToken, changeRate], deleteRating)
 
 
-    app.use("/api/dmfsse", router);
+    app.use("/api/farmers-market", router);
 }
 
 

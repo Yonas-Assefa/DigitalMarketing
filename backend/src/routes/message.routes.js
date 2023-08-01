@@ -14,7 +14,7 @@ const messageRoutes = (app) => {
     router.patch("/message/:id",[verifyToken, changeMessage], updateMessage)
     router.delete("/message/:id",[verifyToken, changeMessage], deleteMessage)
 
-    app.use("/api/dmfsse", router)
+    app.use("/api/farmers-market", router);
 }
 
 module.exports = messageRoutes

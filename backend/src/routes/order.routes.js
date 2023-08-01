@@ -21,7 +21,7 @@ const orderRoute = (app) => {
   router.delete("/order/:id", [verifyToken, changeOrder], deleteOrder);
   router.patch("/order/:id", [verifyToken, changeOrder, checkStatusExist], updateOrder);
 
-  app.use("/api/dmfsse", router);
+  app.use("/api/farmers-market", router);
 };
 
 module.exports = orderRoute;

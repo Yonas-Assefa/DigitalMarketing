@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const mainUrl =
-  "https://digital-marketing-for-farmers-and-sse.onrender.com/api/dmfsse";
-const localUrl = "http://localhost:5000/api/dmfsse";
+  "https://digital-marketing-for-farmers-and-sse.onrender.com/api/farmers-market";
+const localUrl = "http://localhost:5000/api/farmers-market";
 
 const initialState = {
   users: [],

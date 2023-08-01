@@ -11,7 +11,7 @@ const authRoute = (app) => {
     router.post("/register",[checkDuplicatedPhoneNumberOrEmail, checkRole2Exist, verifyToken, isAdmin],signup)
     router.post("/signin", signin)
 
-    app.use("/api/dmfsse", router)
+    app.use("/api/farmers-market", router)
 }
 
 module.exports = authRoute

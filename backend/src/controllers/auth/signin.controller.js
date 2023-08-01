@@ -1,17 +1,28 @@
+const Joi = require('joi');
 const jwt = require("jsonwebtoken");
-const UserModel = require("../../models/auth/signup.model");
-const secretKey = require("../../config/secret.config");
+const { signinJoiSchema } = require("../../models/auth/user.model"); // Assuming you have a separate model for sign-in data
+const UserModel = require("../../models/auth/user.model");
+const secretKey = process.env.SECRET_KEY;
 
 const signin = async (req, res) => {
   try {
-    const user = await UserModel.findOne({ phoneNumber: req.body.phoneNumber });
+    // Validate the request data against the Joi schema
+    const { error, value } = signinJoiSchema.validate(req.body);
+
+    if (error) {
+      // If validation fails, send a 400 Bad Request response with the validation error message
+      res.status(400).json({ message: error.message });
+      return;
+    }
+
+    const user = await UserModel.findOne({ phoneNumber: value.phoneNumber });
 
     if (!user) {
       res.status(404).json({ message: `User Not found` });
       return;
     }
 
-    let isPasswordValid = req.body.password === user.password;
+    let isPasswordValid = value.password === user.password;
     if (!isPasswordValid) {
       res.status(401).send({ message: "Invalid Password" });
       return;
@@ -26,14 +37,15 @@ const signin = async (req, res) => {
       phoneNumber: user.phoneNumber,
       profilePicture: user.profilePicture,
       identifictionPicture: user.identifictionPicture,
-      verified:true,
+      verified: true,
       roles: user.roles,
       accessToken: token,
     });
   } catch (err) {
     res.status(500).send({ message: err.message });
-    return;
   }
 };
 
 module.exports = signin;
+
+
