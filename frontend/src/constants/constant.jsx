@@ -1,4 +1,4 @@
-const mainUrl = "http://localhost:5000/api/farmers-market"
+const mainUrl = "http://localhost:5000/api/dmfsse"
 
 const dashboard = "dashboard"
 const training = "training"

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import DmfsseContex from "../app/contextStore";
+import DmfsseContex from "../appStore/contextStore";
 const UploadImage = () => {
   const dmfsseCtx = useContext(DmfsseContex);
   return (

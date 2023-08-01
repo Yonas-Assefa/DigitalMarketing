@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import AddItem from "../../components/AddItem";
 import ItemTable from "../../components/tables/UserTable";
 import AddUser from "../signup/AddUser";
-import DmfsseContex from "../../app/contextStore";
+import DmfsseContex from "../../appStore/contextStore";
 import EditUser from "../signup/EditUser";
 import UserDetail from "../signup/UserDetail";
 

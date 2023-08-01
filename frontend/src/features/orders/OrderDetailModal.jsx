@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import DmfsseContex from "../../app/contextStore";
+import DmfsseContex from "../../appStore/contextStore";
 import { productDetail } from "../product/productSlice";
 import { orderDetail, updateOrder } from "./myOrdersSlice";
 

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import DmfsseContex from "../../app/contextStore";
+import DmfsseContex from "../../appStore/contextStore";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser, userDetail } from "./signupSlice";
 

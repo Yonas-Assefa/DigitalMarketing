@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Trainings from "../training/Trainings";
 import AddTraining from "../training/AddTraining";
-import DmfsseContex from "../../app/contextStore";
+import DmfsseContex from "../../appStore/contextStore";
 import EditTraining from "../training/EditTraining";
 import TrainingDetail from "../training/TrainingDetail";
 import { useDispatch, useSelector } from "react-redux";

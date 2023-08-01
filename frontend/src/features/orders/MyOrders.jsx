@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout";
 import OrderCard from "../../components/cards/OrderCard";
-const chapaSecretKey = process.env.CHAPA_SECRET_KEY;
 import {
   addOrderDetail,
   getMyOrders,
@@ -26,13 +25,14 @@ const MyOrders = () => {
   const orderErr = useSelector(orderError);
   const [paymentStatus, setPaymentStatus] = useState("idle");
   const mainUrl =
-    "https://digital-marketing-for-farmers-and-sse.onrender.com/api/farmers-market";
+    "https://digital-marketing-for-farmers-and-sse.onrender.com/api/dmfsse";
 
   useEffect(() => {
     dispatch(getMyOrders({ token }));
   }, [dispatch]);
 
- 
+  const chapaSecretKey = "CHASECK_TEST-inlmytxN7CFBwrf8Zm29DPgzYXnZsmrJ";
+
   const handleCheckOut = async (data) => {
     setPaymentStatus("idle");
     try {

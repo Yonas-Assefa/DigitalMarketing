@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import DashboardHome from "./DashboardHome";
-import DmfsseContex from "../../app/contextStore";
+import DmfsseContex from "../../appStore/contextStore";
 import Inbox from "./Inbox";
 import Training from "./Training";
 import Users from "./Users";

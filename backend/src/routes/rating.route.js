@@ -5,14 +5,14 @@ const { changeRate, canRate } = require("../middlewares/product/product.middlewa
 const ratingRoute = (app) => {
     const router = require("express").Router();
 
-    router.post("/rate/:sellerId/:productId",[verifyToken, canRate],giveRate);
-    router.get("/rate/:productOwnerId",[verifyToken], getYourRate);
-    router.get("/productOwnerPreviousRate/:sellerId",[verifyToken], getProductOwnerPreviousRate)
-    router.patch("/rate/:id",[verifyToken, changeRate], updateRate);
-    router.delete("/rate/:id",[verifyToken, changeRate], deleteRating)
+    router.post("/rate/:sellerId/:productId", [verifyToken, canRate], giveRate);
+    router.get("/rate/:productOwnerId", [verifyToken], getYourRate);
+    router.get("/productOwnerPreviousRate/:sellerId", [verifyToken], getProductOwnerPreviousRate)
+    router.patch("/rate/:id", [verifyToken, changeRate], updateRate);
+    router.delete("/rate/:id", [verifyToken, changeRate], deleteRating)
 
 
-    app.use("/api/farmers-market", router);
+    app.use("/api/dmfsse", router);
 }
 
 

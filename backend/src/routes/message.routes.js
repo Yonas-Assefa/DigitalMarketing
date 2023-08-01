@@ -5,16 +5,16 @@ const { changeMessage } = require("../middlewares/product/product.middleware");
 const messageRoutes = (app) => {
     const router = require("express").Router();
 
-    router.post("/message/:id",[verifyToken], sendMessage)
-    router.get("/messages",[verifyToken, isAdmin], getMessages)
-    router.get("/connectedUserList",[verifyToken], connectedUserList)
-    router.get("/message/:id",[verifyToken], getMessage)
-    router.get("/getYourMessage/:id",[verifyToken], getYourMessage)
-    router.get("/getSavedMessages/:id",[verifyToken],getSavedMessage)
-    router.patch("/message/:id",[verifyToken, changeMessage], updateMessage)
-    router.delete("/message/:id",[verifyToken, changeMessage], deleteMessage)
+    router.post("/message/:id", [verifyToken], sendMessage)
+    router.get("/messages", [verifyToken, isAdmin], getMessages)
+    router.get("/connectedUserList", [verifyToken], connectedUserList)
+    router.get("/message/:id", [verifyToken], getMessage)
+    router.get("/getYourMessage/:id", [verifyToken], getYourMessage)
+    router.get("/getSavedMessages/:id", [verifyToken], getSavedMessage)
+    router.patch("/message/:id", [verifyToken, changeMessage], updateMessage)
+    router.delete("/message/:id", [verifyToken, changeMessage], deleteMessage)
 
-    app.use("/api/farmers-market", router);
+    app.use("/api/dmfsse", router);
 }
 
 module.exports = messageRoutes

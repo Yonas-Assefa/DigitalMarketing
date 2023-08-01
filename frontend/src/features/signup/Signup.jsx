@@ -5,7 +5,7 @@ import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import AuthRight from "../../components/AuthRight";
 import { useNavigate } from "react-router-dom";
 import UploadImage from "../../components/UploadImage";
-import DmfsseContex from "../../app/contextStore";
+import DmfsseContex from "../../appStore/contextStore";
 import { useDispatch } from "react-redux";
 import { addNewUser } from "./signupSlice";
 import logoimg from '../../assets/images/flogo22.png';

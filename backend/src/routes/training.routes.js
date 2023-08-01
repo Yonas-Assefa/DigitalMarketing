@@ -4,13 +4,13 @@ const { verifyToken, isAdmin } = require("../middlewares/auth/authJwt");
 const trainingRoute = (app) => {
     const router = require("express").Router();
 
-    router.post("/addTraining",[verifyToken, isAdmin], addTraining);
-    router.get("/trainings",[verifyToken],getTrainings);
-    router.get("/training/:id",[verifyToken],getTraining);
-    router.patch("/training/:id",[verifyToken, isAdmin],updateTraining);
-    router.delete("/training/:id",[verifyToken, isAdmin],deletTraining)
+    router.post("/addTraining", [verifyToken, isAdmin], addTraining);
+    router.get("/trainings", [verifyToken], getTrainings);
+    router.get("/training/:id", [verifyToken], getTraining);
+    router.patch("/training/:id", [verifyToken, isAdmin], updateTraining);
+    router.delete("/training/:id", [verifyToken, isAdmin], deletTraining)
 
-    app.use("/api/farmers-market", router);
+    app.use("/api/dmfsse", router);
 }
 
 

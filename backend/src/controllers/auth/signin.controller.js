@@ -8,7 +8,6 @@ const signin = async (req, res) => {
   try {
     // Validate the request data against the Joi schema
     const { error, value } = signinJoiSchema.validate(req.body);
-
     if (error) {
       // If validation fails, send a 400 Bad Request response with the validation error message
       res.status(400).json({ message: error.message });

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import DmfsseContex from "../../app/contextStore";
+import DmfsseContex from "../../appStore/contextStore";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { changePage } from "../../features/training/trainingSlice";

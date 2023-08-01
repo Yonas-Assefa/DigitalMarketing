@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateStat, updateUser, userDetail } from "./signupSlice";
-import DmfsseContex from "../../app/contextStore";
+import DmfsseContex from "../../appStore/contextStore";
 
 const UserDetail = () => {
   const dispatch = useDispatch();

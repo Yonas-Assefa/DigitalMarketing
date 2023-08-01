@@ -4,10 +4,10 @@ const { verifyToken } = require("../middlewares/auth/authJwt");
 const paymentRoute = (app) => {
     const router = require("express").Router();
 
-    router.post("/chapapay",[verifyToken], addPayment)
-    router.post("/stripPaymentIntent",[verifyToken], addPaymentTwo)
+    router.post("/chapapay", [verifyToken], addPayment)
+    router.post("/stripPaymentIntent", [verifyToken], addPaymentTwo)
 
-    app.use("/api/farmers-market", router);
+    app.use("/api/dmfsse", router);
 }
 
 module.exports = paymentRoute

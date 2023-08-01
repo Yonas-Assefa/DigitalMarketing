@@ -4,8 +4,8 @@ import App from "./App";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./app/store";
-import { DmfsseContextProvider } from "./app/contextStore";
+import store from "./appStore/store";
+import { DmfsseContextProvider } from "./appStore/contextStore";
 
 
 //  import '../node_modules/bootstrap/dist/css/bootstrap.min.css';

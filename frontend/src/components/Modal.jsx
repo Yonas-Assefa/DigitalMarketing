@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import DmfsseContex from "../app/contextStore";
+import DmfsseContex from "../appStore/contextStore";
 import { useDispatch } from "react-redux";
 import { deleteTraining } from "../features/training/trainingSlice";
 import { deleteProduct } from "../features/product/productSlice";

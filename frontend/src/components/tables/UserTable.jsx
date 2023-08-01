@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import SingleItem from "./SingleUser";
-import DmfsseContex from "../../app/contextStore";
+import DmfsseContex from "../../appStore/contextStore";
 import Modal from "../Modal";
 import { useDispatch, useSelector } from "react-redux";
 import {

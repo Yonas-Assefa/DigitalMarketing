@@ -1,5 +1,5 @@
-const UserModel = require("../../models/auth/user.model")
-const { signupJoiSchema } = require("../../models/auth/user.model")
+const { signupJoiSchema } = require("../../models/auth/signup.model");
+const UserModel = require("../../models/auth/signup.model");
 
 const signup = async (req, res) => {
     try {
@@ -9,8 +9,7 @@ const signup = async (req, res) => {
         if (error) {
             // If validation fails, send a 400 Bad Request response with the validation error message
             res.status(400).json({ message: error.message });
-            return; 
-            
+            return;
         }
 
         // If validation passes, create a new user using the validated data

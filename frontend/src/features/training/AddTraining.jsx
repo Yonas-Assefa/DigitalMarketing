@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import UploadImage from "../../components/UploadImage";
-import DmfsseContex from "../../app/contextStore";
+import DmfsseContex from "../../appStore/contextStore";
 import { useDispatch } from "react-redux";
 import { addNewTraining } from "./trainingSlice";
 
