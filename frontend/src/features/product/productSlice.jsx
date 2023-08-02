@@ -27,7 +27,7 @@ export const addNewProduct = createAsyncThunk(
         },
 
       });
-      console.log("popopo")
+      
       return response.data;
     } catch (err) {
       return err.code;
@@ -143,7 +143,7 @@ const productSlice = createSlice({
       })
       .addCase(getAllProducts.fulfilled, (state, action) => {
         state.status = "succeeded";
-        console.log(action.payload)
+     
         state.products = action.payload;
         state.searchedProducts = action.payload
       })      .addCase(getMyProducts.pending, (state, action) => {
@@ -155,7 +155,7 @@ const productSlice = createSlice({
       })
       .addCase(getMyProducts.fulfilled, (state, action) => {
         state.status = "succeeded";
-        console.log(action.payload)
+        
         state.myproducts = action.payload;
       })
       .addCase(addNewProduct.fulfilled, (state, action) => {

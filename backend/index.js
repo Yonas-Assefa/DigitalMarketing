@@ -27,9 +27,9 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("connected to database");
+    
     app.listen(PORT, () => {
-      console.log(`listening at port ${PORT}`);
+     
     });
   })
   .catch((err) => {

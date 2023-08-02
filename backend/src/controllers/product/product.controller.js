@@ -4,7 +4,7 @@ const ProductModel = require("../../models/product.model");
 
 const addProduct = async (req, res) => {
   try {
-    console.log("back back end")
+    
 
     const newProduct = new ProductModel({ ...req.body, postedBy: req.userId });
     const response = await newProduct.save();

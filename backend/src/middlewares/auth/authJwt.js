@@ -70,7 +70,7 @@ const isSse = async (req, res, next) => {
     try{
         const user = await UserModel.findOne({_id:req.userId, roles:'sse'})
         if(user){
-          console.log(user)
+         
             next()
             return
         }

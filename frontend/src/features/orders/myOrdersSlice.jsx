@@ -172,7 +172,7 @@ const orderSlice = createSlice({
       })
       .addCase(getMyOrders.fulfilled, (state, action) => {
         state.status = "succeeded";
-        console.log(action.payload);
+        
         state.myorders = action.payload;
       })
 
@@ -217,8 +217,7 @@ const orderSlice = createSlice({
         state.offerStat = "loading";
       })
       .addCase(updateOrder.fulfilled, (state, action) => {
-        console.log(action);
-        console.log(action.payload[0]._id);
+      
         state.myoffers = state.myoffers.filter(
           (order) => order._id != action.payload[0]._id
         );

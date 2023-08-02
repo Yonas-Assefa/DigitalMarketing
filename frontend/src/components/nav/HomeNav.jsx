@@ -2,8 +2,7 @@ import React, { useContext, useState } from "react";
 import DmfsseContex from "../../appStore/contextStore";
 import { useNavigate } from "react-router-dom";
 import logoimg from "../../assets/images/flogo22.png";
-import { BiListCheck } from 'react-icons/bi';
-
+import { BiPlus } from 'react-icons/bi';
 
 const HomeNav = () => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -77,7 +76,12 @@ const HomeNav = () => {
               className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             >
               <span className="sr-only">Open sidebar</span>
-              <BiListCheck className="w-6 h-6" />
+              <BiPlus
+                className="w-6 h-6"
+                aria-hidden="true"
+              />
+
+              
             </button>
 
             <div  onClick={()=>{navigate("/")}} className="flex ml-2 md:mr-24 cursor-pointer">

@@ -126,7 +126,7 @@ const updateTraining = async (req, res) => {
       req.body
     );
     if (response) {
-      console.log(response.createdAt)
+    
       res
         .status(201)
         .send({

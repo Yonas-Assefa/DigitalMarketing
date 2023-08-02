@@ -20,7 +20,7 @@ const addComment = async (req, res) => {
     res.status(400).send({ message: "comment is not added" });
     return;
   } catch (err) {
-    console.log("errrr")
+    
     res.status(500).send({ message: err.message });
     return;
   }

@@ -47,12 +47,12 @@ const AddUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setRequestStatus("idle");
-    console.log(canSave);
+  
     if (canSave) {
       try {
         setRequestStatus("pending");
         const response = await dispatch(registerUser(data)).unwrap();
-        console.log(response);
+        
         if (response == "ERR_BAD_REQUEST") {
           setRequestStatus("bad_err");
         }

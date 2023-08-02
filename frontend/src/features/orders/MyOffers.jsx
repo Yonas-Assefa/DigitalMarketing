@@ -26,7 +26,7 @@ const MyOffers = () => {
   useEffect(() => {
     dispatch(getMyOffers({ token }));
   }, [dispatch]);
-  console.log(myOffer);
+ 
   if(myOffer == "ERR_BAD_REQUEST"){
    return <Layout>
    <div className="mt-16 mb-96 pt-10 ml-5">

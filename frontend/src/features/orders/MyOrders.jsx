@@ -38,16 +38,6 @@ const MyOrders = () => {
     try {
       setPaymentStatus("pending");
 
-      // const response = await axios.post(`${mainUrl}/chapapay`,data,{headers:{'x-access-token':token}})
-      // console.log(response)
-      // console.log("kkkkkkkkkkk")
-      // if (response.data.status == "success") {
-
-      //   window.open(`${response.data.data.checkout_url}`,'_blank', 'rel=noopener noreferrer')
-      //   setPaymentStatus("idle");
-      // } else if (response.data.status == "failed") {
-      //   setPaymentStatus("failed");
-      // }
 
       const response = await axios.post(
         "https://api.chapa.co/v1/transaction/initialize",

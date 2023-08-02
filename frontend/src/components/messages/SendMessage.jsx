@@ -18,7 +18,7 @@ const SendMessage = () => {
   const sendMessage = async (e) => {
     e.preventDefault();
     setRequestStatus("idle");
-    console.log("pppppppppppppppppppppooooooooooooooo")
+    
     if (user) {
       const token = user.accessToken;
       const canSave = [message, token].every(Boolean);

@@ -76,7 +76,7 @@ export const getAllFarmers = createAsyncThunk(
           "x-access-token": `${token}`,
         },
       });
-      console.log(response)
+      
       return response.data;
     } catch (err) {
       return err.code;
@@ -120,7 +120,7 @@ export const updateUser = createAsyncThunk(
           "x-access-token": `${token}`,
         },
       });
-      console.log(response.data)
+    
       return response.data;
     } catch (err) {
       return err.code;
@@ -142,7 +142,7 @@ const signupSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(addNewUser.fulfilled, (state, action) => {
-        // console.log(action)
+     
         state.status = "succeeded";
       })
       .addCase(getAllUsers.pending, (state, action) => {
@@ -172,7 +172,7 @@ const signupSlice = createSlice({
 
 
       .addCase(registerUser.fulfilled, (state, action) => {
-        console.log(action.payload);
+       
         state.users.push(action.payload.data);
       })
       .addCase(getOneUser.pending, (state, action) => {

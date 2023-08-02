@@ -44,7 +44,7 @@ export const DmfsseContextProvider = ({children}) => {
           },
           () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                console.log(downloadURL)
+             
               setImageUrl(downloadURL)
             });
           }

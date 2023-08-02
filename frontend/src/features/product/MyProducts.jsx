@@ -19,7 +19,7 @@ const MyProducts = () => {
   useEffect(() => {
     dispatch(getMyProducts({ token }));
   }, [dispatch]);
-console.log(prodStatus)
+
   return (
     <Layout>
       <div className="h-24"></div>
