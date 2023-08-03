@@ -225,7 +225,4 @@ module.exports = {
   canRate
 };
 
-/// training content by admin with comment
-/// rating the product owner
-/// messaging
-/// payment
+
