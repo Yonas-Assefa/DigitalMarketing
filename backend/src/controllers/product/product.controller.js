@@ -1,10 +1,15 @@
 const { ObjectId } = require("mongodb");
 const OrderModel = require("../../models/order.model");
 const ProductModel = require("../../models/product.model");
+const ProductValidation = require('../../validation/product.validation');
+
 
 const addProduct = async (req, res) => {
   try {
-    
+    const { error } = ProductValidation.addProductSchema.validate(req.body);
+    if (error) {
+      return res.status(400).json({ message: error.details.map((err) => err.message) });
+    }
 
     const newProduct = new ProductModel({ ...req.body, postedBy: req.userId });
     const response = await newProduct.save();
@@ -19,9 +24,16 @@ const addProduct = async (req, res) => {
   }
 };
 
+
 const getAllProducts = async (req, res) => {
   const page = req.query.p || 0;
   const productsPerPage = 10;
+  const { error } = ProductValidation.getAllProductsSchema.validate(req.query);
+  
+    if (error) {
+      return res.status(400).json({ message: error.details.map((err) => err.message) });
+    }
+
   try {
     const product = await ProductModel.aggregate([
       {$match: {amount: {$gt: 0}}},
@@ -76,6 +88,10 @@ const getAllProducts = async (req, res) => {
 const getProduct = async (req, res) => {
   try {
     const { id } = req.params;
+    const { error } = ProductValidation.getProductSchema.validate({ id });
+    if (error) {
+      return res.status(400).json({ message: error.details.map((err) => err.message) });
+    }
 
     const product = await ProductModel.aggregate([
       {$match: {_id: new ObjectId(id)}},
@@ -184,6 +200,10 @@ const getMyProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
+    const { error } = ProductValidation.updateProductSchema.validate(req.body);
+    if (error) {
+      return res.status(400).json({ message: error.details.map((err) => err.message) });
+    }
 
     const response = await ProductModel.findByIdAndUpdate(id, req.body);
     

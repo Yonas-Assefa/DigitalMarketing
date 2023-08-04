@@ -1,16 +1,15 @@
-const { signupJoiSchema } = require("../../models/auth/signup.model");
 const UserModel = require("../../models/auth/signup.model");
+const AuthValidation = require('../../validations/auth.validation');
 
 const signup = async (req, res) => {
     try {
         // Validate the request data against the Joi schema
-        const { error, value } = signupJoiSchema.validate(req.body);
-
+        const { error, value } = AuthValidation.signupSchema.validate(req.body);
         if (error) {
-            // If validation fails, send a 400 Bad Request response with the validation error message
-            res.status(400).json({ message: error.message });
-            return;
+            return res.status(400).json({ message: error.details.map((err) => err.message) 
+            });
         }
+    
 
         // If validation passes, create a new user using the validated data
         const newUser = new UserModel(value);

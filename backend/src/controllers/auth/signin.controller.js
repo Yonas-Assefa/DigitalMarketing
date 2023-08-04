@@ -1,21 +1,17 @@
-const Joi = require('joi');
 const jwt = require("jsonwebtoken");
-const { signinJoiSchema } = require("../../models/auth/user.model"); // Assuming you have a separate model for sign-in data
+const AuthValidation = require('../../validations/auth.validation');
 const UserModel = require("../../models/auth/user.model");
 const secretKey = process.env.SECRET_KEY;
 
 const signin = async (req, res) => {
   try {
     // Validate the request data against the Joi schema
-    const { error, value } = signinJoiSchema.validate(req.body);
+    const { error } = AuthValidation.signinSchema.validate(req.body);
     if (error) {
-      // If validation fails, send a 400 Bad Request response with the validation error message
-      res.status(400).json({ message: error.message });
-      return;
+      return res.status(400).json({ message: error.details.map((err) => err.message) });
     }
 
     const user = await UserModel.findOne({ phoneNumber: value.phoneNumber });
-
     if (!user) {
       res.status(404).json({ message: `User Not found` });
       return;

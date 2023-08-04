@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addNewOrder } from "./myOrdersSlice";
 import { productDetail } from "../product/productSlice";
 import { useNavigate } from "react-router-dom";
-import { IoIosRefreshCircle } from 'react-icons/io5';
+import { IoIosRefreshCircle } from 'react-icons/io';
 
 
 const ModalOffer = () => {

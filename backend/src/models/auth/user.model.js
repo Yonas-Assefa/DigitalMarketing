@@ -1,4 +1,3 @@
-const Joi = require('joi');
 const { mongoose } = require("mongoose");
 
 const signupSchema = mongoose.Schema(
@@ -26,20 +25,8 @@ function isSseOrFarmer(value, helpers) {
   return helpers.error('any.only', { values: ['sse', 'farmer'] });
 }
 
-// Define the Joi schema to match the signupSchema
-const signupJoiSchema = Joi.object({
-  firstName: Joi.string().required(),
-  lastName: Joi.string().required(),
-  email: Joi.string().email().default("example@gmail.com"),
-  phoneNumber: Joi.string().required(),
-  password: Joi.string().required(),
-  roles: Joi.array().items(Joi.string()).default(["customer"]),
-  profilePicture: Joi.string().default("https://via.placeholder.com/250"),
-  identifictionPicture: Joi.string().custom(isSseOrFarmer).required(),
-  verified: Joi.boolean().default(false)
-});
+
 
 module.exports = {
   signupSchema,
-  signupJoiSchema
 };
